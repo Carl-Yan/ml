@@ -1,19 +1,19 @@
-# Coursea Ng's ML
+# Coursera Ng's ML
 
 | File name                | Details                                  |
 | ------------------------ | ---------------------------------------- |
-| Coursea_ML_Lecture1.pdf  |                                          |
-| Coursea_ML_Lecture2.pdf  |                                          |
-| Coursea_ML_Lecture3.pdf  |                                          |
-| Coursea_ML_Lecture4.pdf  |                                          |
-| Coursea_ML_Lecture5.pdf  |                                          |
-| Coursea_ML_Lecture6.pdf  |                                          |
-| Coursea_ML_Lecture8.pdf  |                                          |
-| Coursea_ML_Lecture9.pdf  |                                          |
-| Coursea_ML_Lecture10.pdf |                                          |
-| Coursea_ML_Lecture11.pdf |                                          |
-| Coursea_ML_Lecture12.pdf |                                          |
-| Coursea_ML_Lecture13.pdf |                                          |
+| Coursera\_ML\_Lecture1.pdf  |                                          |
+| Coursera\_ML\_Lecture2.pdf  |                                          |
+| Coursera\_ML\_Lecture3.pdf  |                                          |
+| Coursera\_ML\_Lecture4.pdf  |                                          |
+| Coursera\_ML\_Lecture5.pdf  |                                          |
+| Coursera\_ML\_Lecture6.pdf  |                                          |
+| Coursera\_ML\_Lecture8.pdf  |                                          |
+| Coursera\_ML\_Lecture9.pdf  |                                          |
+| Coursera\_ML\_Lecture10.pdf |                                          |
+| Coursera\_ML\_Lecture11.pdf |                                          |
+| Coursera\_ML\_Lecture12.pdf |                                          |
+| Coursera\_ML\_Lecture13.pdf |                                          |
 |                          |                                          |
 |                          |                                          |
 |                          |                                          |
