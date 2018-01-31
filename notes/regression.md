@@ -153,7 +153,7 @@ $$
 在原来的$J(\theta)$后面加一项$\lambda\sum_j\theta_j^2$，防止$\theta_j$过大的情况(overfitting)
 
 - $\lambda$过大：$\theta$要保持尽量小才能最小化$J(\theta)$，会欠拟合(underfitting, high bias)
-- $\lambda$过小：和没加一样，会过拟合(overfitting, high varience)
+- $\lambda$过小：和没加一样，会过拟合(overfitting, high variance)
 
 ### Regularized Linear Regression
 
@@ -191,4 +191,10 @@ $$
   grad(1)=(h-y)'*X(:,1)./m;
   grad(2:end)=(h-y)'*X(:,2:end)./m+theta(2:end)'.*lambda/m;
   ```
+
+### Selecting $\lambda$ using a cross validation set
+
+![](pic/select_lambda.png)
+
+
 

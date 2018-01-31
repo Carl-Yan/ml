@@ -11,15 +11,15 @@
 | Coursera\_ML\_Lecture5.pdf  | Octave Tutorial                          |
 | Coursera\_ML\_Lecture6.pdf  | Logistic Regression; Multi-class	classification |
 | Coursera\_ML\_Lecture7.pdf  | Regularization                           |
-| Coursera\_ML\_Lecture8.pdf  | Neural Networks                          |
-| Coursera\_ML\_Lecture9.pdf  |                                          |
-| Coursera\_ML\_Lecture10.pdf |                                          |
-| Coursera\_ML\_Lecture11.pdf |                                          |
-| Coursera\_ML\_Lecture12.pdf |                                          |
-| Coursera\_ML\_Lecture13.pdf |                                          |
-| Coursera\_ML\_Lecture14.pdf |                                          |
-| Coursera\_ML\_Lecture15.pdf |                                          |
-| Coursera\_ML\_Lecture16.pdf |                                          |
+| Coursera\_ML\_Lecture8.pdf  | Neural Networks: Feedforward Propagation and Prediction |
+| Coursera\_ML\_Lecture9.pdf  | Backpropagation algorithm; Gradient checking; Random initialization |
+| Coursera\_ML\_Lecture10.pdf | Machine learning diagnostic; Dividing dataset; Bias & Variance; Learning curves |
+| Coursera\_ML\_Lecture11.pdf | System design; Spam classification; Error analysis; Skewed classes (TP/FP/FN/TN & recall, precision & F1) |
+| Coursera\_ML\_Lecture12.pdf | SVM                                      |
+| Coursera\_ML\_Lecture13.pdf | K-means                                  |
+| Coursera\_ML\_Lecture14.pdf | PCA                                      |
+| Coursera\_ML\_Lecture15.pdf | Anomaly Detection: (Multivariate) Gaussian distribution |
+| Coursera\_ML\_Lecture16.pdf | Recommender Systems; Collaborative Filtering |
 | Coursera\_ML\_Lecture17.pdf |                                          |
 | Coursera\_ML\_Lecture18.pdf |                                          |
 
@@ -34,4 +34,4 @@
 | machine-learning-ex5 | Algo: Analyze high bias&variance, learning curves; Using 2D example; Selecting $\lambda$ using a cross validation set |
 | machine-learning-ex6 | Algo: SVM; Using 2D example, Spam Classification; |
 | machine-learning-ex7 | Algo: K-means (Image compression), PCA (Dimensionality Reduction, Reconstruct); Using 2D example, Face Image Dataset |
-| machine-learning-ex8 | Algo:                                    |
+| machine-learning-ex8 | Algo: Anomaly detection (Gaussian distribution), Recommender Systems (Collaborative filtering learning algorithm) |
