@@ -20,8 +20,8 @@
 | Coursera\_ML\_Lecture14.pdf | PCA                                      |
 | Coursera\_ML\_Lecture15.pdf | Anomaly Detection: (Multivariate) Gaussian distribution |
 | Coursera\_ML\_Lecture16.pdf | Recommender Systems; Collaborative Filtering |
-| Coursera\_ML\_Lecture17.pdf |                                          |
-| Coursera\_ML\_Lecture18.pdf |                                          |
+| Coursera\_ML\_Lecture17.pdf | Stochastic gradient descent; Mini-batch gradient descent; Online learning; Map-reduce & data parallelism |
+| Coursera\_ML\_Lecture18.pdf | Detection (Sliding window); Artificial data synthesis (introducing distortions); Ceiling analysis |
 
 以下是编程作业
 
@@ -34,4 +34,4 @@
 | machine-learning-ex5 | Algo: Analyze high bias&variance, learning curves; Using 2D example; Selecting $\lambda$ using a cross validation set |
 | machine-learning-ex6 | Algo: SVM; Using 2D example, Spam Classification; |
 | machine-learning-ex7 | Algo: K-means (Image compression), PCA (Dimensionality Reduction, Reconstruct); Using 2D example, Face Image Dataset |
-| machine-learning-ex8 | Algo: Anomaly detection (Gaussian distribution), Recommender Systems (Collaborative filtering learning algorithm) |
+| machine-learning-ex8 | Algo: Anomaly detection (Gaussian distribution), Recommender Systems (Collaborative filtering learning algorithm); Using [MovieLens 100k Dataset](http://www.grouplens.org/node/73/) from GroupLens Research. |
