@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>[1605.06409] R-FCN: Object Detection via Region-based Fully Convolutional Networks</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" media="screen" href="/css/arXiv.css?v=20170424" />
+<meta name="citation_title" content="R-FCN: Object Detection via Region-based Fully Convolutional Networks" />
+<meta name="citation_author" content="Dai, Jifeng" />
+<meta name="citation_author" content="Li, Yi" />
+<meta name="citation_author" content="He, Kaiming" />
+<meta name="citation_author" content="Sun, Jian" />
+<meta name="citation_date" content="2016/05/20" />
+<meta name="citation_online_date" content="2016/06/21" />
+<meta name="citation_pdf_url" content="http://arxiv.org/pdf/1605.06409" />
+<meta name="citation_arxiv_id" content="1605.06409" />
+<script src="/js/mathjaxToggle.min.js" type="text/javascript"></script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+var _paq = _paq || [];
+_paq.push(["setDomains", ["*.arxiv.org"]]);
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+(function()
+{ var u="//webanalytics.library.cornell.edu/"; _paq.push(['setTrackerUrl', u+'piwik.php']); _paq.push(['setSiteId', 538]); var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s); }
+)();
+</script>
+<!-- End Piwik Code -->
+
+
+</head>
+<body class="with-cu-identity">
+
+<noscript><img src="//webanalytics.library.cornell.edu/piwik.php?idsite=538&rec=1" style="border:0;" alt="" /></noscript>
+
+<div id="cu-identity">
+<div id="cu-logo">
+<a id="insignia-link" href="http://www.cornell.edu/"><img src="/icons/cu/cul_signature_unstyled.gif" alt="Cornell University" width="283" height="76" border="0" /></a>
+<div id="unit-signature-links">
+<a id="cornell-link" href="http://www.cornell.edu/">Cornell University</a>
+<a id="unit-link" href="http://www.library.cornell.edu/">Library</a>
+</div>
+</div>
+<div id="support-ack">
+<a href="https://confluence.cornell.edu/x/ALlRF">We gratefully acknowledge support from<br />the Simons Foundation<br /> and member institutions</a>
+</div>
+</div>
+<div id="header">
+<h1><a href="/">arXiv.org</a> &gt; <a href="/list/cs/recent">cs</a> &gt; arXiv:1605.06409</h1>
+<div id="search">
+<form id="search-arxiv" method="post" action="/search">
+                
+<div class="wrapper-search-arxiv">
+<input class="keyword-field" type="text" name="query" placeholder="Search or Article ID"/>
+
+<div class="filter-field">
+ <select name="searchtype">
+<option value="all" selected="selected">All papers</option>
+<option value="ti">Titles</option>
+<option value="au">Authors</option>
+<option value="abs">Abstracts</option>
+<option value="ft">Full text</option>
+<option value="help">Help pages</option>
+</select>
+</div>
+<input class="btn-search-arxiv" value="" type="submit">
+<div class="links">(<a href="/help">Help</a> | <a href="/find">Advanced search</a>)</div>
+</div>
+</form>
+</div>
+</div>
+<div id="content">
+
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+    <rdf:Description
+        rdf:about="http://arxiv.org/abs/1605.06409"
+        dc:identifier="http://arxiv.org/abs/1605.06409"
+        dc:title="R-FCN: Object Detection via Region-based Fully Convolutional Networks"
+        trackback:ping="http://arxiv.org/trackback/1605.06409" />
+    </rdf:RDF>
+-->
+
+<div id="abs">
+<div class="extra-services">
+
+<div class="full-text">
+<span class="descriptor">Full-text links:</span>
+<h2>Download:</h2>
+<ul>
+<li><a href="/pdf/1605.06409" accesskey="f">PDF</a></li>
+<li><a href="/format/1605.06409">Other formats</a></li>
+</ul>
+<div class="abs-license">(<a href="http://arxiv.org/licenses/nonexclusive-distrib/1.0/" title="Rights to this article">license</a>)</div>
+</div><!--end full-text-->
+
+<div class="browse">
+<h3>Current browse context:</h3>
+<div class="current">cs.CV</div>
+<div class="prevnext"><span class="arrow"><a href="http://arxiv.org/prevnext?site=arxiv.org&amp;id=1605.06409&amp;context=cs.CV&amp;function=prev" accesskey="p" title="previous in cs.CV (accesskey p)">&lt;&nbsp;prev</a></span>&nbsp;|&nbsp;<span class="arrow"><a href="http://arxiv.org/prevnext?site=arxiv.org&amp;id=1605.06409&amp;context=cs.CV&amp;function=next" accesskey="n" title="next in cs.CV (accesskey n)">next&nbsp;&gt;</a></span>
+<br /></div>
+<div class="list"><a href="/list/cs.CV/new">new</a>&nbsp;| <a href="/list/cs.CV/recent">recent</a>&nbsp;| <a href="/list/cs.CV/1605">1605</a></div><h3>Change to browse by:</h3><div class="switch">
+<a href="/abs/1605.06409?context=cs">cs</a>
+</div>
+
+</div>
+<div class="extra-ref-cite">
+<h3>References &amp; Citations</h3><ul><li><a href="http://adsabs.harvard.edu/cgi-bin/bib_query?arXiv:1605.06409">NASA ADS</a></li>
+</ul>
+
+</div>
+<div class="dblp">
+<h3><a href="http://www.informatik.uni-trier.de/~ley/db/">DBLP</a> - CS Bibliography</h3><div class="list">
+<a href="http://www.informatik.uni-trier.de/~ley/db/journals/corr/corr1605.html#DaiLHS16" title="listing on DBLP">listing</a> | <a href="http://dblp.uni-trier.de/rec/bibtex/journals/corr/DaiLHS16" title="DBLP bibtex record">bibtex</a>
+</div>
+<div class="list">
+<a href="http://dblp.uni-trier.de/search/author?author=Jifeng%20Dai" title="DBLP author search">Jifeng Dai</a><br />
+<a href="http://dblp.uni-trier.de/search/author?author=Yi%20Li" title="DBLP author search">Yi Li</a><br />
+<a href="http://dblp.uni-trier.de/search/author?author=Kaiming%20He" title="DBLP author search">Kaiming He</a><br />
+<a href="http://dblp.uni-trier.de/search/author?author=Jian%20Sun" title="DBLP author search">Jian Sun</a><br />
+</div>
+
+</div>
+<div class="bookmarks">
+<div class="what-is-this">
+<h3>Bookmark</h3> (<a href="/help/social_bookmarking">what is this?</a>)
+</div>
+<a href="/ct?url=http%3A%2F%2Fwww.citeulike.org%2Fposturl%3Furl%3Dhttp%3A%2F%2Farxiv.org%2Fabs%2F1605.06409%26title%3DR-FCN%253A%2520Object%2520Detection%2520via%2520Region-based%2520Fully%2520Convolutional%2520Networks%26authors%3D&amp;v=87984574" title="Bookmark on CiteULike"><img src="//static.arxiv.org/icons/social/citeulike.png" alt="CiteULike logo" /></a>
+<a href="/ct?url=http%3A%2F%2Fwww.bibsonomy.org%2FBibtexHandler%3FrequTask%3Dupload%26url%3Dhttp%3A%2F%2Farxiv.org%2Fabs%2F1605.06409%26description%3DR-FCN%253A%2520Object%2520Detection%2520via%2520Region-based%2520Fully%2520Convolutional%2520Networks&amp;v=3f9af781" title="Bookmark on BibSonomy"><img src="//static.arxiv.org/icons/social/bibsonomy.png" alt="BibSonomy logo" /></a>
+<a href="/ct?url=https%3A%2F%2Fwww.mendeley.com%2Fimport%2F%3Furl%3Dhttp%3A%2F%2Farxiv.org%2Fabs%2F1605.06409&amp;v=7522e19d" title="Bookmark on Mendeley"><img src="//static.arxiv.org/icons/social/mendeley.png" alt="Mendeley logo" /></a>
+<a href="/ct?url=https%3A%2F%2Fdel.icio.us%2Fpost%3Furl%3Dhttp%3A%2F%2Farxiv.org%2Fabs%2F1605.06409%26description%3DR-FCN%253A%2520Object%2520Detection%2520via%2520Region-based%2520Fully%2520Convolutional%2520Networks&amp;v=31000041" title="Bookmark on del.icio.us"><img src="//static.arxiv.org/icons/social/delicious.png" alt="del.icio.us logo" /></a>
+<a href="/ct?url=https%3A%2F%2Fdigg.com%2Fsubmit%3Furl%3Dhttp%3A%2F%2Farxiv.org%2Fabs%2F1605.06409%26title%3DR-FCN%253A%2520Object%2520Detection%2520via%2520Region-based%2520Fully%2520Convolutional%2520Networks&amp;v=198f4ad8" title="Bookmark on Digg"><img src="//static.arxiv.org/icons/social/digg.png" alt="Digg logo" /></a>
+<a href="/ct?url=https%3A%2F%2Freddit.com%2Fsubmit%3Furl%3Dhttp%3A%2F%2Farxiv.org%2Fabs%2F1605.06409%26title%3DR-FCN%253A%2520Object%2520Detection%2520via%2520Region-based%2520Fully%2520Convolutional%2520Networks&amp;v=122f81b8" title="Bookmark on Reddit"><img src="//static.arxiv.org/icons/social/reddit.png" alt="Reddit logo" /></a>
+<a href="/ct?url=http%3A%2F%2Fsciencewise.info%2Fbookmarks%2Fadd%3Furl%3Dhttp%3A%2F%2Farxiv.org%2Fabs%2F1605.06409&amp;v=11625966" title="Bookmark on ScienceWISE"><img src="//static.arxiv.org/icons/social/sciencewise.png" alt="ScienceWISE logo" /></a>
+
+</div>
+</div><!--end extra-services-->
+
+<div class="leftcolumn">
+<div class="subheader">
+<h1>Computer Science > Computer Vision and Pattern Recognition</h1>
+</div>
+<h1 class="title mathjax"><span class="descriptor">Title:</span>
+R-FCN: Object Detection via Region-based Fully Convolutional Networks</h1>
+<div class="authors"><span class="descriptor">Authors:</span>
+<a href="/find/cs/1/au:+Dai_J/0/1/0/all/0/1">Jifeng Dai</a>, 
+<a href="/find/cs/1/au:+Li_Y/0/1/0/all/0/1">Yi Li</a>, 
+<a href="/find/cs/1/au:+He_K/0/1/0/all/0/1">Kaiming He</a>, 
+<a href="/find/cs/1/au:+Sun_J/0/1/0/all/0/1">Jian Sun</a></div>
+<div class="dateline">(Submitted on 20 May 2016 (<a href="/abs/1605.06409v1">v1</a>), last revised 21 Jun 2016 (this version, v2))</div>
+<blockquote class="abstract mathjax">
+<span class="descriptor">Abstract:</span> We present region-based, fully convolutional networks for accurate and
+efficient object detection. In contrast to previous region-based detectors such
+as Fast/Faster R-CNN that apply a costly per-region subnetwork hundreds of
+times, our region-based detector is fully convolutional with almost all
+computation shared on the entire image. To achieve this goal, we propose
+position-sensitive score maps to address a dilemma between
+translation-invariance in image classification and translation-variance in
+object detection. Our method can thus naturally adopt fully convolutional image
+classifier backbones, such as the latest Residual Networks (ResNets), for
+object detection. We show competitive results on the PASCAL VOC datasets (e.g.,
+83.6% mAP on the 2007 set) with the 101-layer ResNet. Meanwhile, our result is
+achieved at a test-time speed of 170ms per image, 2.5-20x faster than the
+Faster R-CNN counterpart. Code is made publicly available at:
+<a href="https://github.com/daijifeng001/r-fcn">this https URL</a>
+</blockquote>
+<!--CONTEXT-->
+<div class="metatable">
+<table summary="Additional metadata">
+<tr>
+<td class="tablecell label">Comments:
+</td>
+<td class="tablecell comments">Tech report</td>
+</tr>
+<tr>
+<td class="tablecell label">Subjects:
+</td>
+<td class="tablecell subjects"><span class="primary-subject">Computer Vision and Pattern Recognition (cs.CV)</span></td>
+</tr>
+<tr>
+<td class="tablecell label">
+Cite&nbsp;as:
+</td>
+<td class="tablecell arxivid"><a href="/abs/1605.06409">arXiv:1605.06409</a> [cs.CV]</td>
+</tr>
+<tr>
+<td class="tablecell label">&nbsp;</td>
+<td class="tablecell arxividv">(or <span class="arxivid"><a href="/abs/1605.06409v2">arXiv:1605.06409v2</a> [cs.CV]</span> for this version)</td>
+</tr>
+</table>
+</div>
+<div class="submission-history">
+<h2>Submission history</h2>
+From: Kaiming He [<a href="https://arxiv.org/show-email/9b1d3a12/1605.06409">view email</a>]
+<br />
+<b><a href="/abs/1605.06409v1">[v1]</a></b> Fri, 20 May 2016 15:50:11 GMT  (7744kb,D)<br />
+<b>[v2]</b> Tue, 21 Jun 2016 15:28:57 GMT  (7744kb,D)<br />
+</div>
+<div class="endorsers"><a href="http://arxiv.org/auth/show-endorsers/1605.06409">Which authors of this paper are endorsers?</a> | <a id="mathjax_toggle" href="javascript:setMathjaxCookie()">Disable MathJax</a> (<a href="/help/mathjax/">What is MathJax?</a>)</div><script type="text/javascript" language="javascript">mathjaxToggle();</script>
+</div><!--end leftcolumn-->
+</div><!--end abs-->
+</div>
+<div id="footer">
+<div class="footer-text">
+<p>Link back to: <a href="http://arxiv.org/">arXiv</a>, <a href="/form">form interface</a>, <a href="/help/contact">contact</a>.</p>
+</div>
+<div class="social"><a href="https://twitter.com/arxiv"><img src="//static.arxiv.org/icons/twitter_logo_blue.png" alt="Twitter" title="Follow arXiv on Twitter"></a></div>
+</div>
+</body>
+</html>
