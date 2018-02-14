@@ -5,3 +5,4 @@ squeezenet.ckpt.data-00000-of-00001
 squeezenet.ckpt.meta
 imagenet_val_25.npz   
 squeezenet.ckpt.index
+MNIST_data

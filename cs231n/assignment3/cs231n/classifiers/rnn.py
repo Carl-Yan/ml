@@ -137,7 +137,22 @@ class CaptioningRNN(object):
         # defined above to store loss and gradients; grads[k] should give the      #
         # gradients for self.params[k].                                            #
         ############################################################################
-        pass
+        h0,feature_cache=affine_forward(features,W_proj,b_proj) #1
+        captions_in_emb,emb_cache=word_embedding_forward(captions_in,W_embed) #2
+        if self.cell_type=='lstm':
+            h,rnn_cache=lstm_forward(captions_in_emb,h0,Wx,Wh,b) #3
+        else:
+            h,rnn_cache=rnn_forward(captions_in_emb,h0,Wx,Wh,b) #3
+        temporal_out,temporal_cache=temporal_affine_forward(h,W_vocab,b_vocab) #4
+        loss,dout=temporal_softmax_loss(temporal_out,captions_out,mask) #5
+
+        dh,grads['W_vocab'],grads['b_vocab']=temporal_affine_backward(dout,temporal_cache) #4
+        if self.cell_type=='lstm':
+            drnn,dh0,grads['Wx'],grads['Wh'],grads['b']=lstm_backward(dh,rnn_cache) #3
+        else:
+            drnn,dh0,grads['Wx'],grads['Wh'],grads['b']=rnn_backward(dh,rnn_cache) #3
+        grads['W_embed']=word_embedding_backward(drnn,emb_cache) #2
+        dfeatures,grads['W_proj'],grads['b_proj']=affine_backward(dh0,feature_cache) #1
         ############################################################################
         #                             END OF YOUR CODE                             #
         ############################################################################
@@ -199,7 +214,19 @@ class CaptioningRNN(object):
         # functions; you'll need to call rnn_step_forward or lstm_step_forward in #
         # a loop.                                                                 #
         ###########################################################################
-        pass
+        next_h,_=affine_forward(features,W_proj,b_proj)
+        x=np.array([self._start]*N)
+        captions[:,0]=self._start
+        next_c=np.zeros_like(next_h)
+        for t in range(1,max_length):
+            x_emb,_=word_embedding_forward(x,W_embed)
+            if self.cell_type=='lstm':
+                next_h,next_c,cache=lstm_step_forward(x_emb,next_h,next_c,Wx,Wh,b)
+            else:
+                next_h,cache=rnn_step_forward(x_emb,next_h,Wx,Wh,b)
+            vocab_out,vocab_cache=affine_forward(next_h,W_vocab,b_vocab)
+            x=vocab_out.argmax(1)
+            captions[:,t]=x
         ############################################################################
         #                             END OF YOUR CODE                             #
         ############################################################################
