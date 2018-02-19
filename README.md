@@ -6,6 +6,8 @@
 
 [CS231n](http://cs231n.github.io)：存放于cs231n文件夹下，包含所有课件、编程作业（使用PyTorch）
 
+[Reinforcement Learning](https://www.bilibili.com/video/av9831889/)：存放于rl文件夹下，包含所有课件
+
 `notes`文件夹：存放个人学习笔记和心得体会
 
 `paper`文件夹：存放paper
