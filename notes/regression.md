@@ -143,10 +143,14 @@ $$
 
 - Gradient descent
 - Conjugate gradient
-- BFGS
-- L-BFGS
+- BFGS 用二阶黑塞矩阵逼近，每次直接到二次函数极值点上
+- L-BFGS: Does not form/store the full inverse Hessian.
+  - Usually works very well in full batch, deterministic mode
+    i.e. if you have a single, deterministic f(x) then L-BFGS will probably work very nicely
+  - Does not transfer very well to mini-batch setting. Gives bad results. Adapting L-BFGS to large-scale, stochastic setting is an active area of research.
+  - If you can afford to do full batch updates then try out L-BFGS (and don’t forget to disable all sources of noise)
 
-听说后面三个根本没有learning rate这玩意……而且更快
+听说后面三个根本没有learning rate这玩意……而且更快？
 
 ## Regularization
 
@@ -196,5 +200,20 @@ $$
 
 ![](pic/select_lambda.png)
 
+### Other formulation
 
+- L2: $R(W)=\sum_k\sum_lW_{k,l}^2$
+- L1: $R(W)=\sum_k\sum_l|W_{k,l}|$
+- Elastic net (L1+L2): $R(W)=\sum_k\sum_l\beta W_{k,l}^2+|W_{k,l}|$ 
+- Max norm
+- Dropout: 0.5 is common; at test time, multiply by dropout probability
+- **BN**
+- Stochastic depth
 
+## Multiclass SVM loss
+
+$$
+L_i=\sum_{j\neq y_i} \max{(0,s_j-s_{y_i}+1)}
+$$
+
+由于是以随机$\epsilon$初始化，因此可以通过一些计算得到第一次迭代前的程序输出（是确定的），可以用来check代码对不对。（包括上面的softmax loss）
