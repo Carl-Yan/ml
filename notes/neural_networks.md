@@ -22,11 +22,11 @@ where N is usually up to ~5, M is large, 0 <= K <= 2.
 
 ## Random initialization
 
-//When training neural networks, it is important to randomly initialize the parameters for symmetry breaking. One effective strategy for random initialization is to randomly select values for $\Theta^{(l)}$ uniformly in the range $[-\epsilon_{init}, \epsilon_{init} ]$. This range of values ensures that the parameters are kept small and makes the learning more efficient.
+Use Xavier initialization: 假设数据服从高斯分布，保持运算前后方差不变。具体：
 
-//One effective strategy for choosing $\epsilon_{init}$ is to base it on the number of units in the network. A good choice of $\epsilon_{init}$ is $\epsilon_{init} = \frac{\sqrt{6}}{\sqrt{L_{in}+L_{out}}}$, where $L_{in} = s_l$ and $L_{out} = s_{l+1}$ are in out the number of units in the layers adjacent to $\Theta^{(l)}$.
+When training neural networks, it is important to randomly initialize the parameters for symmetry breaking. One effective strategy for random initialization is to randomly select values for $\Theta^{(l)}$ uniformly in the range $[-\epsilon_{init}, \epsilon_{init} ]$. This range of values ensures that the parameters are kept small and makes the learning more efficient.
 
-Use Xavier initialization: 假设数据服从高斯分布，保持运算前后方差不变。
+One effective strategy for choosing $\epsilon_{init}$ is to base it on the number of units in the network. A good choice of $\epsilon_{init}$ is $\epsilon_{init} = \frac{\sqrt{6}}{\sqrt{L_{in}+L_{out}}}$, where $L_{in} = s_l$ and $L_{out} = s_{l+1}$ are in out the number of units in the layers adjacent to $\Theta^{(l)}$.
 
 ## Cost Function
 
