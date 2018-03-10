@@ -30,12 +30,6 @@ LRN不work
 
 ？网络对图片操作具有鲁棒性（较高层次提取的feature对于平移和尺度变化具有不变性，对非中心对称的旋转不具有不变性）：是原始图像变换之后的数据喂的好？（AlexNet里面说没做图像变换效果很差） => 给出差异，神经网络能够从中学出共性
 
-### OverFeat
-
-**将FC看成1\*1 conv**，能够处理任意图像大小输入，输出不止一张feature map；然后综合输出的feature map得到得分 => 避免了在原图上的裁剪，实际上是增加采样数，但不增加计算量
-
-可以在pooling的feature map上面进行滑窗
-
 ### NIN
 
 对feature map进行1*1 conv，增加非线性性
@@ -88,21 +82,47 @@ v3+ResNet
 
 ### SqueezeNet
 
-5\*5 conv改成3\*3会增大计算量：25\*C\*N\*N<9\*C\*(1+C')\*N\*N
+5\*5 conv改成3\*3会增大计算量：25\*C\*N\*N<9\*C\*(1+C')\*N\*N，但是瓶颈不在于计算，在于读取数据
 
 dense-sparse-dense：使用裁剪之后的模型为初始值，再次进行训练调优所有参数，正确率能够提升4.3%。 稀疏相当于一种正则化，有机会把解从局部极小中解放出来。
 
 ### MobileNet v1
 
-将传统卷积操作分解：$D_K · D_K · M · N · D_F · D_F$，the number of input channels $M$ , the number of output channels $N$ the kernel size $D_k × D_k$ and the feature map size $D_F × D_F$ ，变为(1) Depthwise Convolutional Filters: $D_K*D_K*1*M$; (2) Pointwise Convolution: $1\times 1\times M\times N$。把经典的卷积核在空域和channel维度上进行解耦，depthwise卷积在每个channel上单独做，做完以后再用1*1的卷积核做pointwise卷积，这样能很大程度上减少卷积需要的参数量：$D_K · D_K · M · D_F · D_F + M · N · D_F · D_F$
+将传统卷积操作分解：$D_K · D_K · M · N · D_F · D_F$，input channels $M$ , output channels $N$ , the kernel size $D_k × D_k$ and the feature map size $D_F × D_F$ ，变为(1) Depthwise Convolutional Filters: $D_K*D_K*1*M$; (2) Pointwise Convolution: $1\times 1\times M\times N$。把经典的卷积核在空域和channel维度上进行解耦，depthwise卷积在每个channel上单独做，做完以后再用1*1的卷积核做pointwise卷积，这样能很大程度上减少卷积需要的参数量：$D_K · D_K · M · D_F · D_F + M · N · D_F · D_F$，优化比例为$\frac{1}{D_K^2}+\frac{1}{C_{out}}\sim\frac{1}{D_K^2}$
 
 可以在M和N之前乘上一个瘦身因子$\alpha$，不过性能可能会下降
 
-？与factorized convolution的具体比较
+与factorized convolution的具体比较：假设N=M，$D_K*1*N*N*2*D_F*D_F$，优化比例为$\frac{2}{D_K}$
 
 ### MobileNet v2
 
 改进：变成纺锤状，先升维，DC，再降维
 
 channel数目少的时候，受到ReLU的影响更大，因此对于网络中用于channel降维的层后面都不再使用ReLU处理，而是使其保持线性
+
+
+
+## Detection
+
+### R-CNN
+
+### OverFeat
+
+**将FC看成1\*1 conv**，能够处理任意图像大小输入，输出不止一张feature map；然后综合输出的feature map得到得分 => 避免了在原图上的裁剪，实际上是增加采样数，但不增加计算量
+
+可以在pooling的feature map上面进行滑窗
+
+### SPPNet
+
+### Fast R-CNN
+
+### Faster R-CNN
+
+### R-FCN
+
+### FPN
+
+### Mask R-CNN
+
+### Focal Loss
 
