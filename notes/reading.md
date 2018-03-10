@@ -18,6 +18,8 @@ subsampling：减轻小变化所带来的影响，减小敏感性
 
 dropout：每个神经元dropout概率为0.5，测试的时候每个的输出×2
 
+LRN不work
+
 ### ZFNet
 
 反卷积：“Adaptive deconvolutional networks for mid and high level feature learning”，根据可视化的特征进行网络结构的修改
@@ -35,3 +37,21 @@ Train：pre-init，先把小的训好，然后不断加入新的层/改变图像
 卷积核：多用小卷积核能够【减少计算成本，增加非线性性】
 
 ？Table6：两个model的ensemble比七个还要好？
+
+### OverFeat
+
+**将FC看成1\*1 conv**，能够处理任意图像大小输入，输出不止一张feature map；然后综合输出的feature map得到得分 => 避免了在原图上的裁剪，实际上是增加采样数，但不增加计算量
+
+### NIN
+
+对feature map进行1*1 conv，增加非线性性
+
+### GoogLeNet v1
+
+1*1 conv：降维，增加表达能力（本质是对feature map进行线性组合），称之为bottleneck
+
+Inception modules 用在 higher layers，低层还是conv，说是technical reasons
+
+提了一句在数据中随机增加光照，用来增加光照和颜色的不变性。[链接](http://blog.csdn.net/sheng_ai/article/details/40652193)
+
+训练的时候在中间层注入梯度，乘上一个weight decay因子
