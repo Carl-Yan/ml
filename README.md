@@ -12,4 +12,6 @@
 
 `paper`文件夹：存放paper
 
+markdown文件推荐使用Typora打开
+
 TODO
