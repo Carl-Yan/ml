@@ -124,7 +124,7 @@ roi pool：将每个box均匀分成N×M块，每块进行max pooling，然后再
 
 ### Faster R-CNN
 
-
+把selective search的那些框定死，固定大小的size和scale ratio，反正后面会fine tune
 
 ### R-FCN
 
@@ -137,6 +137,20 @@ roi pool：将每个box均匀分成N×M块，每块进行max pooling，然后再
 
 
 ## Camera
+
+### DeepISP
+
+
+
+### DBL
+
+双边滤波器：平滑的地方高斯滤波，不平滑的不要动
+
+It is often simpler to predict the transformation from input to output rather than predicting the output directly.
+
+Guidance map有助于提升效果，前提是要符合论文中的假设
+
+### Demosaicking and Denoising
 
 
 
