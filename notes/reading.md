@@ -114,9 +114,17 @@ channel数目少的时候，受到ReLU的影响更大，因此对于网络中用
 
 ### SPPNet
 
+把出来的feature map统一scale成4\*4、2\*2和1\*1的，在上面做检测，使得任意大小的特征图都能够转换成固定大小的特征向量；检测完成之后再反推回去
+
+理论上conv大小是下取整出来的，实际上是算完写死的
+
 ### Fast R-CNN
 
+roi pool：将每个box均匀分成N×M块，每块进行max pooling，然后再将这些feature map送进去处理
+
 ### Faster R-CNN
+
+
 
 ### R-FCN
 
