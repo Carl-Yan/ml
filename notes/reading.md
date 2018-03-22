@@ -154,6 +154,24 @@ Guidance map有助于提升效果，前提是要符合论文中的假设
 
 
 
+### HDR+
+
+使用Raw，很多曝光的trick，不用过曝的帧
+
+在连拍照片中取前三张中sharpest的一张当做reference frame，之后把其他的frame合并至ref.，建立了从low level alignment field到high level，支持相邻frame像素偏移169pixel的合并
+
+分场景建模（暗光，中等，较亮），曝光时间依次下降
+
+后处理使用2D/3D FFT，看不太懂，最后基本按照原来的框架比如“black-level subtraction，white balance，demosaic，chroma denoise，color correction，local tone map，dehaze，global tone map，sharpen，hue-specific color adjustments，dithering，saturation”，好多专业术语……不是很懂
+
+basic idea：合并frame可以用cnn并行合并，输入两张图输出一张；之后把合并完的frame送到FFT kernel进行后处理，最后fine tune
+
+### Fast Burst Images Denoising
+
+之前的运动估计通常依靠光流（逐点运功估计）或者块匹配（常用于视频压缩的运动估计）的方式。然而它们的计算非常耗时，并且结果容易受到噪声的影响。袁路所在的研究组对相机运动和被拍摄物体运动进行了拆分计算。首先，他们将相机的运动参数化，建立出一个参数模型，从而能非常快的估计出具体运动的相关参数。而针对场景中的物体运动，他们则对每一帧的具体运动进行了分析，针对运动的快慢，算法都能相应地估计出运动物体的精确轮廓。在每个像素时间轴上相加平均的时候，那些位于运动物体轮廓区域的像素都会被排除掉。通过这种简单的方式，他们能有效的解决图片每个像素对齐的问题。除此之外，他们进一步考虑空间上信息相关性，建立了一个多尺度“金字塔”结构，根据图像结构（例如，平滑区域和边缘）的分析，自适应的选择相应的平滑策略，从而达到进一步去除残留噪声的目的。最终，他们的算法将时间轴和空间轴结合在一起，在校正了每一帧的运动之后，得到的便是一幅清晰的图像。
+
+
+
 ## RL
 
 因果分析的方法框架主要有：
